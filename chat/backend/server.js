@@ -101,7 +101,11 @@ app.post("/chat", async (req, res) => {
     
 
     const data = await response.json();
-
+    
+    console.log("===== RESPOSTA GEMINI =====");
+    console.log(JSON.stringify(data, null, 2));
+    console.log("===========================");
+    
     const text =
       data?.candidates?.[0]?.content?.parts?.[0]?.text ||
       "⚠ O modelo não respondeu.";
