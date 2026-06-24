@@ -146,7 +146,7 @@ async function sendMessage() {
   display.appendChild(typing);
 
   try {
-    const response = await fetch("http://localhost:3000/chat", {
+    const response = await fetch("https://api.render.com/deploy/srv-d8tkphjtqb8s73eehgrg?key=OcYx7PbMMt0", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text })
