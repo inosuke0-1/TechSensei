@@ -51,7 +51,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
   const login = document.getElementById("username").value;
   const senha = document.getElementById("password").value;
 
-  const res = await fetch("https://techsenseibend.onrender.com/auth/login", {
+  const res = await fetch("https://techsenseibend.onrender.com", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ login, senha })
