@@ -52,7 +52,7 @@ document.getElementById("cadastroForm").addEventListener("submit", async (e) => 
   const senha = document.getElementById("password").value;
   const confirmarSenha = document.getElementById("confirmpassword").value;
 
-  const res = await fetch("https://techsensei.onrender.com/auth/register", {
+  const res = await fetch("https://techsenseibend.onrender.com/auth/register", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ username, email, nascimento, senha, confirmarSenha })
