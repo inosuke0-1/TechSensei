@@ -21,7 +21,7 @@ window.onload = function () {
 
 async function handleCredentialResponse(response) {
 
-  const res = await fetch("http://localhost:3000/auth/google-login", {
+  const res = await fetch("https://techsensei.onrender.com/auth/google-login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -52,7 +52,7 @@ document.getElementById("cadastroForm").addEventListener("submit", async (e) => 
   const senha = document.getElementById("password").value;
   const confirmarSenha = document.getElementById("confirmpassword").value;
 
-  const res = await fetch("http://localhost:3000/auth/register", {
+  const res = await fetch("https://techsensei.onrender.com/auth/register", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ username, email, nascimento, senha, confirmarSenha })
