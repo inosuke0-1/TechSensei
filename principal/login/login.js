@@ -21,7 +21,7 @@ window.onload = function () {
 
 async function handleCredentialResponse(response) {
 
-  const res = await fetch("https://techsenseibend.onrender.com", {
+  const res = await fetch("https://techsenseibend.onrender.com/auth/google-login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -51,7 +51,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
   const login = document.getElementById("username").value;
   const senha = document.getElementById("password").value;
 
-  const res = await fetch("https://techsenseibend.onrender.com", {
+  const res = await fetch("https://techsenseibend.onrender.com/auth/login", {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ login, senha })
