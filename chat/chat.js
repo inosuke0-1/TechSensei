@@ -199,7 +199,7 @@ fileInput.addEventListener("change", async () => {
   display.appendChild(typing);
 
   try {
-    const response = await fetch("https://techsenseibend.onrender.com", {
+    const response = await fetch("https://techsenseibend.onrender.com/chat", {
       method: "POST",
       body: formData
     });
