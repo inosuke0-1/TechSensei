@@ -18,7 +18,7 @@ app.use("/auth", googleAuth);
 
 
 app.use(cors({
-  origin: ["https://techsenseibend.onrender.com"],
+  origin: ["https://techsensei-1.onrender.com"],
   methods: ["GET", "POST"],
   credentials: true
 }));
