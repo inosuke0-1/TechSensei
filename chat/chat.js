@@ -146,7 +146,7 @@ async function sendMessage() {
   display.appendChild(typing);
 
   try {
-    const response = await fetch("https://api.render.com/deploy/srv-d8tkphjtqb8s73eehgrg?key=OcYx7PbMMt0", {
+    const response = await fetch("https://techsenseibend.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text })
@@ -199,7 +199,7 @@ fileInput.addEventListener("change", async () => {
   display.appendChild(typing);
 
   try {
-    const response = await fetch("http://localhost:3000/upload", {
+    const response = await fetch("https://techsenseibend.onrender.com", {
       method: "POST",
       body: formData
     });
@@ -228,7 +228,7 @@ navFileInput.addEventListener("change", async () => {
   const formData = new FormData();
   formData.append("file", file);
 
-  const response = await fetch("http://localhost:3000/upload", {
+  const response = await fetch("https://techsenseibend.onrender.com", {
     method: "POST",
     body: formData
   });
