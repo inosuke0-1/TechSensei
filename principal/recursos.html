@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Recursos | TechSensei</title>
+ <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon">
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#05010d;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:
+      radial-gradient(circle at top right,#8a2be2 0%,transparent 30%),
+      radial-gradient(circle at bottom left,#5f00ff 0%,transparent 30%);
+      opacity:0.15;
+      z-index:-1;
+    }
+
+    /* NAVBAR */
+
+    header{
+      width:100%;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(10,10,20,0.75);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      position:fixed;
+      top:0;
+      z-index:999;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .logo h1{
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    .logo span{
+      background: linear-gradient(45deg, #8000f8, #4b00f9, #aa3bff, #d400ff,  #8000f8);
+      background-size: 400% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      animation: gradient 5s linear infinite ;
+    }
+
+    nav{
+      display:flex;
+      gap:35px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a:hover{
+      color:#c85cff;
+    }
+
+    nav a.active{
+      color:#b026ff;
+    }
+
+    nav a.active::after{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:2px;
+      background:#b026ff;
+      left:0;
+      bottom:-8px;
+    }
+
+    .btn{
+      padding:12px 28px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(135deg,#7a00ff,#d633ff);
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 20px #b026ff;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:170px 80px 100px;
+      text-align:center;
+    }
+
+    .hero span{
+      color:#c85cff;
+      letter-spacing:2px;
+      font-size:0.9rem;
+    }
+
+    .hero h2{
+      margin-top:20px;
+      font-size:4rem;
+      line-height:1.1;
+      font-weight:800;
+    }
+
+    .hero h2 span{
+      font-size:inherit;
+      color:#a60eff;
+      text-shadow:0 0 10px #8938b8;
+    }
+
+    .hero p{
+      max-width:800px;
+      margin:30px auto;
+      color:#d0d0d0;
+      font-size:1.2rem;
+      line-height:1.8;
+    }
+
+    /* RECURSOS */
+
+    .resources{
+      width:100%;
+      padding:0 80px 100px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .resource-card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:35px;
+      transition:0.4s;
+      position:relative;
+      overflow:hidden;
+      backdrop-filter:blur(12px);
+    }
+
+    .resource-card::before{
+      content:'';
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:#8a2be2;
+      filter:blur(90px);
+      opacity:0.15;
+      top:-40px;
+      right:-40px;
+    }
+
+    .resource-card:hover{
+      transform:translateY(-10px);
+      border-color:#b026ff;
+      box-shadow:0 0 35px rgba(176,38,255,0.18);
+    }
+
+    .icon{
+      width:75px;
+      height:75px;
+      border-radius:20px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:rgba(176,38,255,0.12);
+      margin-bottom:25px;
+    }
+
+    .icon i{
+      font-size:2rem;
+      color:#b026ff;
+    }
+
+    .resource-card h3{
+      font-size:1.6rem;
+      margin-bottom:15px;
+    }
+
+    .resource-card p{
+      color:#cfcfcf;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .resource-card a{
+      color:#c85cff;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .resource-card a:hover{
+      color:white;
+    }
+
+    /* SECTION EXTRA */
+
+    .tools{
+      padding:0 80px 120px;
+    }
+
+    .tools-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .tools-title h2{
+      font-size:3rem;
+      margin-bottom:15px;
+    }
+
+    .tools-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .tool-box{
+      padding:30px;
+      border-radius:24px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+    }
+
+    .tool-box:hover{
+      transform:scale(1.03);
+      border-color:#b026ff;
+    }
+
+    .tool-box i{
+      font-size:2rem;
+      margin-bottom:20px;
+      color:#b026ff;
+    }
+
+    .tool-box h4{
+      margin-bottom:12px;
+      font-size:1.3rem;
+    }
+
+    .tool-box p{
+      color:#cfcfcf;
+      line-height:1.7;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:40px 80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .socials{
+      display:flex;
+      gap:18px;
+    }
+
+    .socials i{
+      font-size:1.4rem;
+      color:#b026ff;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .socials i:hover{
+      transform:scale(1.2);
+      color:white;
+    }
+
+    footer p{
+      color:#bdbdbd;
+    }
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+    /* RESPONSIVO */
+
+    @media(max-width:1000px){
+
+      nav{
+        display:none;
+      }
+
+      .hero{
+        padding:150px 30px 80px;
+      }
+
+      .resources,
+      .tools{
+        padding-left:30px;
+        padding-right:30px;
+      }
+
+      .hero h2{
+        font-size:3rem;
+      }
+    }
+
+    @media(max-width:700px){
+
+      header{
+        padding:20px;
+      }
+
+      .hero h2{
+        font-size:2.4rem;
+      }
+
+      footer{
+        padding:40px 25px;
+        justify-content:center;
+        text-align:center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <div class="logo">
+      <img src="../assets/Logo.png" alt="">
+      <h1>Tech<span>Sensei</span></h1>
+    </div>
+
+    <nav>
+      <a href="ia1.html">Início</a>
+      <a href="recursos.html" class="active">Recursos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <a href="ia1.html"><button class="btn">  Explorar
+    </button></a>
+    
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <span>PLATAFORMA INTELIGENTE</span>
+
+    <h2>
+      Recursos para um <span>aprendizado moderno</span>
+    </h2>
+
+    <p>
+      Explore ferramentas interativas, conteúdos imersivos e recursos
+      avançados criados para transformar sua experiência de aprendizado
+      em algo futurista e totalmente dinâmico.
+    </p>
+
+  </section>
+
+  <!-- CARDS -->
+
+  <section class="resources">
+
+    <div class="resource-card">
+
+      <div class="icon">
+        <i class="fa-solid fa-vr-cardboard"></i>
+      </div>
+
+      <h3>Ambientes 3D</h3>
+
+      <p>
+        Estude em ambientes virtuais imersivos com experiências
+        modernas e interativas.
+      </p>
+
+
+    </div>
+
+    <div class="resource-card">
+
+      <div class="icon">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+
+      <h3>IA Educacional</h3>
+
+      <p>
+        Assistente inteligente para ajudar em dúvidas,
+        explicações e aprendizado personalizado.
+      </p>
+
+    
+
+    </div>
+
+
+
+    <div class="resource-card">
+
+      <div class="icon">
+        <i class="fa-solid fa-users"></i>
+      </div>
+
+      <h3>Comunidade</h3>
+
+      <p>
+        Interaja com outros estudantes e compartilhe
+        experiências em tempo real.
+      </p>
+
+     
+    </div>
+
+  </section>
+
+  <!-- FERRAMENTAS -->
+
+  <section class="tools">
+
+    <div class="tools-title">
+    
+      <p>
+        Tudo o que você precisa para estudar no próximo nível.
+      </p>
+    </div>
+
+    <div class="tools-grid">
+
+      <div class="tool-box">
+        <i class="fa-solid fa-chart-line"></i>
+        <h4>Progresso Inteligente</h4>
+        <p>
+          Acompanhe seu desempenho em tempo real.
+        </p>
+      </div>
+
+
+      <div class="tool-box">
+        <i class="fa-solid fa-headset"></i>
+        <h4>Suporte 24h</h4>
+        <p>
+          Equipe pronta para ajudar sempre que precisar.
+        </p>
+      </div>
+
+      <div class="tool-box">
+        <i class="fa-solid fa-lock"></i>
+        <h4>Segurança</h4>
+        <p>
+          Seus dados protegidos com tecnologia avançada.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2025 TechSensei. Todos os direitos reservados.
+    </p>
+
+    <div class="socials">
+      <i class="fa-brands fa-discord"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-github"></i>
+    </div>
+
+  </footer>
+
+</body>
+</html>

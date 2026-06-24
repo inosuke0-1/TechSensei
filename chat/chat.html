@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="chat.css">
+  <title>TechSensei</title>
+  <script src="https://kit.fontawesome.com/c4a0edcca2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
+
+
+
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar">
+
+      <div class="nav-left">
+        <img src="../assets/Logo.png" alt="logo" class="logo-img">
+        <h2 class="text">TechSensei</h2>
+      </div>
+
+      <div class="nav-center">
+        <button id="homeBtn" class="nav-btn"><i class="fa-solid fa-house"></i> Home</button>
+        <button id="newChatBtn" class="nav-btn"><i class="fa-solid fa-plus"></i> Novo Chat</button>
+        <button id="historyBtn" class="nav-btn"><i class="fa-solid fa-clock-rotate-left"></i> Histórico</button>
+        <button id="uploadBtn" class="nav-btn"><i class="fa-solid fa-file-arrow-up"></i> Arquivo</button>
+        <input type="file" id="navFileInput" hidden>
+      </div>
+
+
+
+
+      <div id="profileModal" class="profile-modal hidden">
+        <div class="profile-container">
+
+          <div class="profile-header">
+            <span>Perfil</span>
+            <button id="closeProfileBtn">&times;</button>
+          </div>
+
+          <div class="profile-body">
+            <div class="profile-photo">
+              <img id="profileImg" src="https://via.placeholder.com/100" alt="Foto do usuário">
+              <input type="file" id="profilePhotoInput" hidden>
+              <button id="editPhotoBtn">Editar Foto</button>
+            </div>
+
+            <div class="profile-info">
+              <p><strong>Nome:</strong> <span id="profileName">Usuário</span></p>
+              <p><strong>E-mail:</strong> <span id="profileEmail">email@exemplo.com</span></p>
+            </div>
+
+            <button id="logoutProfileBtn" class="logout-profile-btn">Sair da Conta</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="cropModal" class="crop-modal hidden">
+        <div class="crop-inner">
+
+          <div class="crop-body">
+            <div class="crop-wrapper">
+              <img id="cropImage" src="" alt="Cortar imagem" />
+            </div>
+          </div>
+
+          <div class="crop-footer">
+            <button id="cropCancelBtn">Cancelar</button>
+            <button id="cropConfirmBtn">Confirmar</button>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="btn-profile-config">
+        <button id="openProfileBtn" class="nav-btn">
+          <i class="fa-solid fa-user"></i>
+        </button>
+
+
+        <div class="nav-right">
+
+          <button id="settingsBtn" class="nav-btn">
+            <i class="fa-solid fa-gear"></i>
+          </button>
+          <section class="sidebar hidden" id="sidebar">
+            <h3>Histórico</h3>
+            <div id="chatHistory"></div>
+            <button id="clearHistory">Limpar Histórico</button>
+          </section>
+
+
+          <div id="settingsMenu" class="settings-menu">
+            <button id="logoutBtn">Sair da conta</button>
+          </div>
+
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Início</a>
+      <a href="#">Chat</a>
+      <a href="#">Ferramentas</a>
+      <a href="#">Sobre</a>
+      <button class="login-btn">Entrar</button>
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <section class="chat-area">
+      <div class="mensagens-display" id="mensagensDisplay">
+
+      </div>
+
+
+      <div class="conversa">
+        <div class="mensagens">
+          <input type="file" id="fileInput" hidden>
+          <span class="arquivos" id="fileBtn">
+            <i class="fa-solid fa-paperclip"></i>
+          </span>
+
+
+
+          <input type="text" class="mensagem-input" id="mensagemInput" placeholder="Digite sua mensagem...">
+          <span class="microfone"><i class="fa-solid fa-microphone" id="mic-btn" width="30px"></i></span>
+          <button class="enviar-btn" id="send-btn"><i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="modelo-area">
+      <div id="modelo3D">
+        
+        <img src="../assets/Professora_com_Livro_3D_PNG_Transparente.png" alt="" width="600px">
+      </div>
+    </section>
+
+
+  </main>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script src="chat.js" defer></script>
+
+</body>
+
+</html>

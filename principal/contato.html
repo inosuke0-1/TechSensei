@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contato | TechSensei</title>
+<link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon">
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#05010d;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:
+      radial-gradient(circle at top right,#8a2be2 0%,transparent 30%),
+      radial-gradient(circle at bottom left,#5f00ff 0%,transparent 30%);
+      opacity:0.15;
+      z-index:-1;
+    }
+
+    /* NAVBAR */
+
+    header{
+      width:100%;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(10,10,20,0.75);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      position:fixed;
+      top:0;
+      z-index:999;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .logo h1{
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    .logo span{
+      font-size:inherit;
+      background: linear-gradient(45deg, #8000f8, #4b00f9, #aa3bff, #d400ff,  #8000f8);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s linear infinite ;
+    }
+
+    nav{
+      display:flex;
+      gap:35px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a:hover{
+      color:#c85cff;
+    }
+
+    nav a.active{
+      color:#b026ff;
+    }
+
+    nav a.active::after{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:2px;
+      background:#b026ff;
+      left:0;
+      bottom:-8px;
+    }
+
+    .btn{
+      padding:12px 28px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(135deg,#7a00ff,#d633ff);
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 20px #b026ff;
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:170px 80px 70px;
+      text-align:center;
+    }
+
+    .hero span{
+      color:#c85cff;
+      letter-spacing:2px;
+      font-size:0.9rem;
+    }
+     
+.hero .highlight{
+      color:#b026ff;
+      text-shadow:0 0 10px #8400d1;
+      font-size:2.9rem;
+    }
+
+    .hero h2{
+      margin-top:20px;
+      font-size:4rem;
+      font-weight:800;
+    }
+
+    .hero h2 span{
+      color:#b026ff;
+      text-shadow:0 0 20px #b026ff;
+    }
+
+    .hero p{
+      max-width:750px;
+      margin:30px auto;
+      color:#d0d0d0;
+      font-size:1.2rem;
+      line-height:1.8;
+    }
+
+    /* CONTATO */
+
+    .contact-section{
+      width:100%;
+      padding:0 80px 100px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:start;
+    }
+
+    /* INFO */
+
+    .contact-info{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:45px;
+      backdrop-filter:blur(12px);
+    }
+
+    .contact-info h3{
+      font-size:2rem;
+      margin-bottom:25px;
+    }
+
+    .info-box{
+      display:flex;
+      gap:18px;
+      margin-bottom:30px;
+      align-items:flex-start;
+    }
+
+    .info-icon{
+      min-width:60px;
+      height:60px;
+      border-radius:18px;
+      background:rgba(176,38,255,0.12);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .info-icon i{
+      color:#b026ff;
+      font-size:1.4rem;
+    }
+
+    .info-text h4{
+      margin-bottom:8px;
+      font-size:1.1rem;
+    }
+
+    .info-text p{
+      color:#cfcfcf;
+      line-height:1.7;
+    }
+
+    .socials{
+      margin-top:40px;
+      display:flex;
+      gap:18px;
+    }
+
+    .socials i{
+      width:50px;
+      height:50px;
+      border-radius:15px;
+      background:rgba(255,255,255,0.05);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#b026ff;
+      font-size:1.2rem;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .socials i:hover{
+      transform:translateY(-5px);
+      background:#b026ff;
+      color:white;
+      box-shadow:0 0 20px #b026ff;
+    }
+
+    /* FORM */
+
+    .contact-form{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:45px;
+      backdrop-filter:blur(12px);
+    }
+
+    .contact-form h3{
+      font-size:2rem;
+      margin-bottom:30px;
+    }
+
+    .input-group{
+      margin-bottom:22px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:10px;
+      color:#d8d8d8;
+    }
+
+    .input-group input,
+    .input-group textarea{
+      width:100%;
+      padding:16px 18px;
+      border:none;
+      outline:none;
+      border-radius:18px;
+      background:rgba(255,255,255,0.05);
+      color:white;
+      border:1px solid transparent;
+      transition:0.3s;
+      font-size:1rem;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus{
+      border-color:#b026ff;
+      box-shadow:0 0 15px rgba(176,38,255,0.2);
+    }
+
+    textarea{
+      resize:none;
+      min-height:150px;
+    }
+
+    .submit-btn{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:18px;
+      background:linear-gradient(135deg,#7a00ff,#d633ff);
+      color:white;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 25px #b026ff;
+    }
+
+    /* MAPA */
+
+    .map{
+      width:100%;
+      padding:0 80px 100px;
+    }
+
+    .map-box{
+      width:100%;
+      height:350px;
+      border-radius:30px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 30px rgba(176,38,255,0.1);
+    }
+
+    .map-box iframe{
+      width:100%;
+      height:100%;
+      border:none;
+      filter:grayscale(0.9) invert(1) contrast(1.1);
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:40px 80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    footer p{
+      color:#bdbdbd;
+    }
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }}
+    /* RESPONSIVO */
+
+    @media(max-width:1000px){
+
+      nav{
+        display:none;
+      }
+
+      .contact-section{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding:150px 30px 70px;
+      }
+
+      .contact-section,
+      .map{
+        padding-left:30px;
+        padding-right:30px;
+      }
+
+      .hero h2{
+        font-size:3rem;
+      }
+    }
+
+    @media(max-width:700px){
+
+      header{
+        padding:20px;
+      }
+
+      .hero h2{
+        font-size:2.3rem;
+      }
+
+      .contact-info,
+      .contact-form{
+        padding:30px;
+      }
+
+      footer{
+        padding:35px 25px;
+        text-align:center;
+        justify-content:center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+
+    
+  <!-- NAVBAR -->
+
+  <header>
+
+    <div class="logo">
+      <img src="../assets/Logo.png" alt="">
+      <h1>Tech<span>Sensei</span></h1>
+    </div>
+
+    <nav>
+      <a href="ia1.html">Início</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+
+    <a href="ia1.html"><button class="btn">
+      Começar
+    </button></a>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <span>FALE COM A GENTE</span>
+
+    <h2>
+      Entre em <span class="highlight">Contato</span>
+    </h2>
+
+    <p>
+      Nossa equipe está pronta para ajudar você.
+      Tire dúvidas, envie sugestões ou fale sobre
+      sua experiência com a plataforma TechSensei.
+    </p>
+
+  </section>
+
+  <!-- CONTATO -->
+
+  <section class="contact-section">
+
+    <!-- INFO -->
+
+    <div class="contact-info">
+
+      <h3>Informações</h3>
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <div class="info-text">
+          <h4>Endereço</h4>
+          <p>cidade, estado, rua tal, 111</p>
+        </div>
+
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+
+        <div class="info-text">
+          <h4>Email</h4>
+          <p>iatechsensei@gmail.com</p>
+        </div>
+
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+
+        <div class="info-text">
+          <h4>Telefone</h4>
+          <p>+55 (88) 99999-9999</p>
+        </div>
+
+      </div>
+
+      <div class="info-box">
+
+        <div class="info-icon">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+
+        <div class="info-text">
+          <h4>Horário</h4>
+          <p>Segunda - Sexta | 08:00 às 18:00</p>
+        </div>
+
+      </div>
+
+      <div class="socials">
+
+        <i class="fa-brands fa-discord"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-github"></i>
+
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+
+    <div class="contact-form">
+
+      <h3>Envie uma mensagem</h3>
+
+      <form>
+
+        <div class="input-group">
+          <label>Nome</label>
+          <input type="text" placeholder="Digite seu nome">
+        </div>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Digite seu email">
+        </div>
+
+        <div class="input-group">
+          <label>Assunto</label>
+          <input type="text" placeholder="Digite o assunto">
+        </div>
+
+        <div class="input-group">
+          <label>Mensagem</label>
+          <textarea placeholder="Digite sua mensagem"></textarea>
+        </div>
+
+        <button class="submit-btn">
+          Enviar mensagem
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- MAPA -->
+
+  <section class="map">
+
+    <div class="map-box">
+
+      <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.671944471588!2d-39.283162669479275!3d-7.047781950537441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a3d3acbb797a8f%3A0x6f2ed230318217c2!2sEscola%20Estadual%20de%20Educa%C3%A7%C3%A3o%20Profissional%20Paulo%20Barbosa%20Leite!5e0!3m2!1spt-BR!2sbr!4v1779412635515!5m2!1spt-BR!2sbr" 
+      allowfullscreen=""
+      loading="lazy">
+      </iframe>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2025 TechSensei. Todos os direitos reservados.
+    </p>
+
+    <p>
+      Desenvolvido por TechSensei Team
+    </p>
+
+  </footer>
+
+</body>
+</html>

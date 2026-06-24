@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechSensei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+ <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#05010d;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* Fundo */
+    body::before{
+      content:'';
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:
+      radial-gradient(circle at top right,#8a2be2 0%,transparent 30%),
+      radial-gradient(circle at bottom left,#5f00ff 0%,transparent 30%);
+      opacity:0.15;
+      z-index:-1;
+    }
+
+    /* NAVBAR */
+
+    header{
+      width:100%;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+      background:rgba(10,10,20,0.7);
+      backdrop-filter:blur(10px);
+      position:fixed;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .logo h1{
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    .logo span{
+      background: linear-gradient(45deg, #8000f8, #4b00f9, #aa3bff, #d400ff,  #8000f8);
+      background-size: 400% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      animation: gradient 5s linear infinite ;
+    }
+
+    nav{
+      display:flex;
+      gap:35px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a:hover{
+      color:#c85cff;
+    }
+
+    nav a::after{
+      content:'';
+      position:absolute;
+      width:0%;
+      height:2px;
+      left:0;
+      bottom:-8px;
+      background:#b026ff;
+      transition:0.3s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    .buttons{
+      display:flex;
+      gap:15px;
+    }
+    .buttons a{
+      color:white;
+      text-decoration:none;
+    }
+    .btn{
+      padding:12px 28px;
+      border-radius:14px;
+      border:none;
+      cursor:pointer;
+      font-size:1rem;
+      font-weight:600;
+      transition:0.4s;
+    }
+
+    .btn-login{
+      background:transparent;
+      border:2px solid #a020f0;
+      color:white;
+    }
+
+    .btn-login:hover{
+      background:#a020f0;
+      box-shadow:0 0 15px #a020f0;
+    }
+
+    .btn-register{
+      background:linear-gradient(135deg,#7a00ff,#d633ff);
+      color:white;
+    }
+
+    .btn-register:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 20px #b026ff;
+    }
+
+    /* HERO */
+
+    .hero{
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:140px 80px 80px;
+      gap:40px;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:10px 20px;
+      border:1px solid rgba(176,38,255,0.5);
+      border-radius:30px;
+      color:#c85cff;
+      margin-bottom:25px;
+      font-size:0.9rem;
+      letter-spacing:1px;
+    }
+
+    .hero h2{
+      font-size:5rem;
+      line-height:1;
+      margin-bottom:25px;
+      font-weight:800;
+    }
+
+    .hero h2 span{
+      color:#b026ff;
+      text-shadow:0 0 10px #a013f3;
+    }
+
+    .hero p{
+      font-size:1.4rem;
+      color:#d0d0d0;
+      margin-bottom:40px;
+      max-width:600px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+    }
+
+    .hero-buttons a{
+      color:white;
+      text-decoration:none;
+    }
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+      position:relative;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:700px;
+      border-radius:25px;
+      box-shadow:0 0 40px rgba(176,38,255,0.35);
+    }
+
+    /* CARDS */
+
+    .features{
+      width:100%;
+      padding:20px 80px 100px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:35px;
+      border-radius:24px;
+      transition:0.4s;
+      backdrop-filter:blur(10px);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:#b026ff;
+      box-shadow:0 0 30px rgba(176,38,255,0.2);
+    }
+
+    .card i{
+      font-size:2rem;
+      color:#b026ff;
+      margin-bottom:20px;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      font-size:1.4rem;
+    }
+
+    .card p{
+      color:#cfcfcf;
+      line-height:1.6;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:30px 80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .socials{
+      display:flex;
+      gap:20px;
+    }
+
+    .socials i{
+      font-size:1.4rem;
+      color:#b026ff;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .socials i:hover{
+      transform:scale(1.2);
+      color:white;
+    }
+
+    footer p{
+      color:#bdbdbd;
+    }
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+    /* RESPONSIVO */
+
+    @media(max-width:1100px){
+
+      nav{
+        display:none;
+      }
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero p{
+        margin:auto auto 40px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero h2{
+        font-size:4rem;
+      }
+    }
+
+    @media(max-width:700px){
+
+      header{
+        padding:20px;
+      }
+
+      .hero{
+        padding:140px 25px 60px;
+      }
+
+      .features{
+        padding:20px 25px 80px;
+      }
+
+      footer{
+        padding:30px 25px;
+        text-align:center;
+        justify-content:center;
+      }
+
+      .hero h2{
+        font-size:3rem;
+      }
+
+      .hero p{
+        font-size:1.1rem;
+      }
+
+      .buttons{
+        display:none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+
+    
+
+
+  <header>
+
+    <div class="logo">
+      <img src="../assets/Logo.png" alt="Logo TechSensei"/>
+      <h1>Tech<span>Sensei</span></h1>
+    </div>
+
+    <nav>
+      <a href="#">Início</a>
+     
+      <a href="recursos.html">Recursos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="buttons">
+      <a href="login/login.html"><button class="btn btn-login">Login</button></a>
+      <a href="cadastro/cadastro.html"><button class="btn btn-register">Cadastrar</button></a>
+    </div>
+
+  </header>
+
+
+  <section class="hero">
+
+    <div class="hero-text">
+
+      <div class="badge">
+        APRENDIZADO QUE TRANSFORMA
+      </div>
+
+      <h2>
+        Seu professor <br>
+        <span>em 3D</span>
+      </h2>
+
+      <p>
+        Tenha uma experiência incrível e um aprendizado
+        mais dinâmico com inteligência artificial e ambientes imersivos.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="login/login.html">
+          <button class="btn btn-login">
+            <i class="fa-regular fa-user"></i> Login
+          </button>
+        </a>
+
+        <a href="cadastro/cadastro.html">
+          <button class="btn btn-register">
+            <i class="fa-solid fa-user-plus"></i> Cadastrar
+          </button>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-image">
+      <img src="../assets/TechSensei (1).png" alt="">
+    </div>
+
+  </section>
+
+ 
+
+  <section class="features">
+
+    <div class="card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h3>Aprendizado 3D</h3>
+      <p>
+        Aulas interativas com ambientes futuristas
+        e experiência totalmente imersiva.
+      </p>
+    </div>
+
+    <div class="card">
+      <i class="fa-solid fa-rocket"></i>
+      <h3>Mais Dinâmico</h3>
+      <p>
+        Conteúdo moderno e inteligente para acelerar
+        seu aprendizado.
+      </p>
+    </div>
+
+
+
+    <div class="card">
+      <i class="fa-solid fa-users"></i>
+      <h3>Comunidade</h3>
+      <p>
+        Faça parte de uma comunidade ativa
+        e colaborativa.
+      </p>
+    </div>
+
+  </section>
+
+  
+
+  <footer>
+
+    <p>
+      © 2025 TechSensei. Todos os direitos reservados.
+    </p>
+
+    <div class="socials">
+      <i class="fa-brands fa-discord"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-github"></i>
+    </div>
+
+  </footer>
+
+</body>
+</html>

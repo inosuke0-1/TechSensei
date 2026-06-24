@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sobre | TechSensei</title>
+ <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon">
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#05010d;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:'';
+      position:fixed;
+      width:100%;
+      height:100%;
+      background:
+      radial-gradient(circle at top right,#8a2be2 0%,transparent 30%),
+      radial-gradient(circle at bottom left,#5f00ff 0%,transparent 30%);
+      opacity:0.15;
+      z-index:-1;
+    }
+
+    /* NAVBAR */
+
+    header{
+      width:100%;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(10,10,20,0.75);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(12px);
+      position:fixed;
+      top:0;
+      z-index:999;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:55px;
+      height:55px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .logo h1{
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    .logo span{
+      background: linear-gradient(45deg, #8000f8, #4b00f9, #aa3bff, #d400ff,  #8000f8);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s linear infinite ;
+    }
+
+    nav{
+      display:flex;
+      gap:35px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+      position:relative;
+    }
+
+    nav a:hover{
+      color:#c85cff;
+    }
+
+    nav a.active{
+      color:#b026ff;
+    }
+
+    nav a.active::after{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:2px;
+      background:#b026ff;
+      left:0;
+      bottom:-8px;
+    }
+
+    .btn{
+      padding:12px 28px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(135deg,#7a00ff,#d633ff);
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.4s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 0 20px #b026ff;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:160px 80px 100px;
+      position:relative;
+    }
+
+    .hero-content{
+      max-width:900px;
+      z-index:2;
+    }
+
+    .hero span{
+      color:#c85cff;
+      letter-spacing:3px;
+      font-size:0.9rem;
+      
+    }
+
+    .hero h2{
+      font-size:5rem;
+      margin-top:25px;
+      line-height:1.1;
+      font-weight:800;
+    }
+
+    .hero h2 span{
+      font-size:inherit;
+      background: linear-gradient(45deg, #8000f8, #4b00f9, #aa3bff, #d400ff,  #8000f8);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s linear infinite ;
+    }
+
+    .hero p{
+      margin-top:30px;
+      color:#cfcfcf;
+      font-size:1.2rem;
+      line-height:2;
+    }
+
+    /* CARDS */
+
+    .about-cards{
+      padding:0 80px 120px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:40px;
+      transition:0.4s;
+      backdrop-filter:blur(10px);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:'';
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:#8a2be2;
+      filter:blur(90px);
+      opacity:0.15;
+      top:-40px;
+      right:-40px;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:#b026ff;
+      box-shadow:0 0 35px rgba(176,38,255,0.18);
+    }
+
+    .card i{
+      font-size:2.5rem;
+      color:#b026ff;
+      margin-bottom:25px;
+    }
+
+    .card h3{
+      font-size:1.5rem;
+      margin-bottom:15px;
+    }
+
+    .card p{
+      color:#d0d0d0;
+      line-height:1.9;
+    }
+
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.08);
+      padding:40px 80px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    footer p{
+      color:#bdbdbd;
+    }
+
+    .socials{
+      display:flex;
+      gap:18px;
+    }
+
+    .socials i{
+      width:50px;
+      height:50px;
+      border-radius:15px;
+      background:rgba(255,255,255,0.05);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#b026ff;
+      font-size:1.2rem;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .socials i:hover{
+      transform:translateY(-5px);
+      background:#b026ff;
+      color:white;
+      box-shadow:0 0 20px #b026ff;
+    }
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+    /* RESPONSIVO */
+
+    @media(max-width:1000px){
+
+      nav{
+        display:none;
+      }
+
+      .hero{
+        padding:150px 30px 100px;
+      }
+
+      .hero h2{
+        font-size:3.5rem;
+      }
+
+      .about-cards,
+      .timeline,
+      .team{
+        padding-left:30px;
+        padding-right:30px;
+      }
+
+      .timeline-container::before{
+        left:20px;
+      }
+
+      .timeline-item{
+        width:100%;
+        left:0 !important;
+        padding-left:60px;
+        text-align:left !important;
+      }
+    }
+
+    @media(max-width:700px){
+
+      header{
+        padding:20px;
+      }
+
+      .hero h2{
+        font-size:2.5rem;
+      }
+
+      .section-title h2{
+        font-size:2.4rem;
+      }
+
+      footer{
+        padding:35px 25px;
+        text-align:center;
+        justify-content:center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header>
+
+    <div class="logo">
+      <img src="../assets/Logo.png" alt="">
+      <h1>Tech<span>Sensei</span></h1>
+    </div>
+
+    <nav>
+      <a href="ia1.html">Início</a>
+  
+      <a href="recursos.html">Recursos</a>
+      <a href="sobre.html" class="active">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+
+    <a href="ia1.html"><button class="btn">
+      Explorar
+    </button></a>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <span>QUEM SOMOS</span>
+
+      <h2>
+        O futuro da educação começa na
+        <span>TechSensei</span>
+      </h2>
+
+      <p>
+        Somos uma plataforma futurista criada para transformar o aprendizado
+        em uma experiência imersiva, inteligente e dinâmica utilizando
+        tecnologia 3D, inteligência artificial e design cyberpunk.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- CARDS -->
+
+  <section class="about-cards">
+
+    <div class="card">
+
+      <i class="fa-solid fa-brain"></i>
+
+      <h3>Inteligência Artificial</h3>
+
+      <p>
+        Utilizamos IA para personalizar o aprendizado e criar
+        experiências únicas para cada estudante.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <i class="fa-solid fa-rocket"></i>
+
+      <h3>Inovação Constante</h3>
+
+      <p>
+        Estamos sempre criando novas tecnologias para revolucionar
+        a educação digital.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2025 TechSensei. Todos os direitos reservados.
+    </p>
+
+    <div class="socials">
+
+      <i class="fa-brands fa-discord"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-youtube"></i>
+      <i class="fa-brands fa-github"></i>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

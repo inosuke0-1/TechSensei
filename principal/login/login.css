@@ -1,0 +1,335 @@
+/* ========================================= */
+/* RESET */
+/* ========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background:#05010d;
+}
+
+/* ========================================= */
+/* VIDEO */
+/* ========================================= */
+
+.background{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.background::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    z-index:2;
+
+    background:
+    linear-gradient(rgba(5,1,13,.72), rgba(5,1,13,.85)),
+    radial-gradient(circle at top right,#8a2be2 0%,transparent 30%),
+    radial-gradient(circle at bottom left,#5f00ff 0%,transparent 30%);
+}
+
+.background video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(.35) saturate(1.3);
+}
+
+/* ========================================= */
+/* CENTRO */
+/* ========================================= */
+
+.centro{
+    width:100%;
+    min-height:100vh;
+    height:auto;
+    padding:60px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:10;
+    margin-bottom: 30px;
+}
+
+/* ========================================= */
+/* FORM */
+/* ========================================= */
+#loginForm, #cadastroForm{
+    max-height:none;
+}
+
+#loginForm{
+
+    width:100%;
+    max-width:470px;
+   
+    padding:55px 45px;
+
+    border-radius:30px;
+
+    background:rgba(12,10,25,.78);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 0 35px rgba(176,38,255,.18);
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:fadeUp 1s ease;
+}
+
+/* GLOW */
+
+#loginForm::before{
+    content:'';
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:#8a2be2;
+
+    filter:blur(120px);
+
+    opacity:.15;
+
+    top:-80px;
+    right:-80px;
+}
+
+/* ========================================= */
+/* TITULO */
+/* ========================================= */
+
+#loginForm h1{
+
+    font-size:2rem;
+
+    margin-bottom:45px;
+
+    color:white;
+
+    font-weight:800;
+
+    position:relative;
+
+    z-index:2;
+}
+
+#loginForm h1::after{
+
+    content:'';
+
+    width:85px;
+    height:5px;
+
+    border-radius:20px;
+
+    background:#b026ff;
+
+    position:absolute;
+
+    left:0;
+    bottom:-12px;
+
+    box-shadow:0 0 15px #b026ff;
+}
+
+/* ========================================= */
+/* INPUTS */
+/* ========================================= */
+
+.input-container{
+    margin-bottom:28px;
+    position:relative;
+    z-index:2;
+}
+
+.input-container label{
+    display:block;
+    margin-bottom:12px;
+    color:#ececec;
+    font-size:1rem;
+}
+
+/* INPUT */
+
+.input-container input{
+
+    width:100%;
+    height:62px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    padding:0 20px;
+
+    color:white;
+
+    font-size:1rem;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid transparent;
+
+    transition:.35s;
+}
+
+/* FOCUS */
+
+.input-container input:focus{
+
+    border-color:#b026ff;
+
+    background:rgba(255,255,255,.08);
+
+    box-shadow:
+    0 0 18px rgba(176,38,255,.18);
+}
+
+/* ========================================= */
+/* BOTÃO */
+/* ========================================= */
+
+button{
+
+    width:100%;
+    height:62px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7a00ff,
+        #d633ff
+    );
+
+    color:white;
+
+    font-size:1.1rem;
+    font-weight:700;
+
+    transition:.35s;
+
+    margin-top:8px;
+}
+
+/* HOVER */
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 20px rgba(176,38,255,.35);
+}
+
+/* ========================================= */
+/* GOOGLE */
+/* ========================================= */
+
+#googleBtn{
+    margin-top:22px;
+    justify-content:center;
+}
+
+/* ========================================= */
+/* TEXTO */
+/* ========================================= */
+
+#loginForm p{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:#d8d8d8;
+
+    font-size:1rem;
+
+    z-index:2;
+
+    position:relative;
+}
+
+#loginForm p a{
+
+    color:#c026ff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+#loginForm p a:hover{
+
+    color:white;
+
+    text-shadow:0 0 10px #b026ff;
+}
+
+/* ========================================= */
+/* ANIMAÇÃO */
+/* ========================================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ========================================= */
+/* RESPONSIVO */
+/* ========================================= */
+
+@media(max-width:600px){
+
+    #loginForm{
+        padding:40px 25px;
+    }
+
+    #loginForm h1{
+        font-size:3rem;
+    }
+
+    .input-container input,
+    button{
+        height:58px;
+    }
+
+}

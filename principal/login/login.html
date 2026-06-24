@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+ <link rel="shortcut icon" href="../assets/Logo.png" type="image/x-icon">
+    <title>TechSensei</title>
+
+</head>
+<body>
+    <div class="background">
+        <video autoplay muted loop>
+            <source src="../../assets/túnel Roxo.mp4">
+        </video>
+    </div>
+
+    <div class="centro">
+       <form id="loginForm">
+
+                    <h1>Login</h1>
+                    <div class="input-container">
+                        <label for="username">Email ou nome de usuário:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-container">
+                        
+                    <button type="submit">Login</button>
+                    <br>
+                    <div id="googleBtn"></div>
+                    </div>
+                    <p>Não tem uma conta? <a href="../cadastro/cadastro.html">Cadastre-se</a></p>
+        </form>
+    </div>
+    
+    <script src="login.js"></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+</body>
+
+</html>
