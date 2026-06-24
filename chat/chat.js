@@ -146,7 +146,7 @@ async function sendMessage() {
   display.appendChild(typing);
 
   try {
-    const response = await fetch("https://techsenseibend.onrender.com", {
+    const response = await fetch("https://techsenseibend.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: text })
